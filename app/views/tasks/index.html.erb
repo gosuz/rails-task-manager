@@ -1,0 +1,15 @@
+<%# and a view should loop over these to display them, like in the screenshot below. %>
+<h1>My Tasks</h1>
+
+<% @tasks.each do |task| %>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+    <label class="form-check-label" for="flexCheckDefault">
+      <%# <%= task.title %>
+      <%= link_to(task.title, task_path(task)) %>
+    </label>
+  </div>
+<% end %>
+
+<%# can click onto the task, but   %>
+<%= link_to("create task", new_task_path) %>
